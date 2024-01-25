@@ -8,7 +8,8 @@ const string CONNECTION_STRING = "Server=localhost,1433;Database=Clinica;User ID
 var connection = new SqlConnection(CONNECTION_STRING);
 connection.Open();
 
-MostrarClientes();
+MostrarClientes(connection);
+MostrarProcedimentos(connection);
 // MostrarCliente();
 // CadastrarCliente();
 // AtualizarCliente();
@@ -25,56 +26,17 @@ static void MostrarClientes(SqlConnection connection)
     {
         Console.WriteLine(cliente.Nome);
     }
+
 }
 
-static void MostrarCliente()
+static void MostrarProcedimentos(SqlConnection connection)
 {
-    using (var connection = new SqlConnection(CONNECTION_STRING))
+    var repository = new ProcedimentoRepository(connection);
+    var procedimentos = repository.BuscarProcedimentos();
+
+    foreach (var procedimento in procedimentos)
     {
-        var cliente = connection.Get<Cliente>(1);
-        Console.WriteLine(cliente.Nome);
+        Console.WriteLine(procedimento.Nome);
     }
-}
 
-static void CadastrarCliente()
-{
-    var cliente = new Cliente()
-    {
-        Nome = "Alice Melchior",
-        Telefone = "43984110033",
-        Detalhe = "nda"
-    };
-
-    using (var connection = new SqlConnection(CONNECTION_STRING))
-    {
-        connection.Insert<Cliente>(cliente);
-        Console.WriteLine($"Cliente {cliente.Nome} cadastrado(a) com sucesso");
-    }
-}
-
-static void AtualizarCliente()
-{
-    var cliente = new Cliente()
-    {
-        Id = 2,
-        Nome = "Alice M P",
-        Telefone = "43984110033",
-        Detalhe = "nda"
-    };
-
-    using (var connection = new SqlConnection(CONNECTION_STRING))
-    {
-        connection.Update<Cliente>(cliente);
-        Console.WriteLine($"Atualização de {cliente.Nome} realizada");
-    }
-}
-
-static void DeletarCliente()
-{
-    using (var connection = new SqlConnection(CONNECTION_STRING))
-    {
-        var cliente = connection.Get<Cliente>(2);
-        connection.Delete<Cliente>(cliente);
-        Console.WriteLine($"{cliente.Nome} deletado(a)");
-    }
 }

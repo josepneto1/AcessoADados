@@ -20,5 +20,35 @@ public class ClienteRepository
         => _connection.Get<Cliente>(id);
 
     public void CadastrarCliente(Cliente cliente)
-        => _connection.Insert<Cliente>(cliente);
+    {
+        cliente.Id = 0; // atribui sempre o valor 0 para o id de um cliente, não atrapalha o incremento do db
+        _connection.Insert<Cliente>(cliente); 
+    }
+
+    public void AtualizarCliente(Cliente cliente)
+    {
+        if (cliente.Id != 0)
+        {
+            _connection.Update<Cliente>(cliente);
+        }
+    }
+    
+    public void DeletarCliente(Cliente cliente)
+    {
+        if (cliente.Id != 0)
+        {
+            _connection.Delete<Cliente>(cliente);
+        }
+    }
+    
+    public void DeletarCliente(int id)
+    {
+        if (id != 0)
+        {
+            return;
+        }
+
+        var cliente = _connection.Get<Cliente>(id);
+        _connection.Delete<Cliente>(cliente);
+    }
 }
