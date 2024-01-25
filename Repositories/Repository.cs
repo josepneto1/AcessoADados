@@ -4,19 +4,19 @@ using Dapper.Contrib.Extensions;
 
 namespace AcessoADados.Repositories;
 
-public class ProcedimentoRepository
+public class Repository<T> where T : class
 {
     private readonly SqlConnection _connection;
 
-    public ProcedimentoRepository(SqlConnection connection)
+    public Repository(SqlConnection connection)
     {
         _connection = connection;
     }
-
-    public IEnumerable<Procedimento> BuscarProcedimentos()
-        => _connection.GetAll<Procedimento>();
-
-    public Procedimento BuscarProcedimento(int id)
+    
+    public IEnumerable<T> BuscarTodos()
+        => _connection.GetAll<T>();
+    
+    public Procedimento BuscarUmo(int id)
         => _connection.Get<Procedimento>(id);
 
     public void CadastrarProcedimento(Procedimento procedimento)

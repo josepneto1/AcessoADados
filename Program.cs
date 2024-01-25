@@ -19,8 +19,8 @@ connection.Close();
 
 static void MostrarClientes(SqlConnection connection)
 {
-    var repository = new ClienteRepository(connection);
-    var clientes = repository.BuscarClientes();
+    var repository = new Repository<Cliente>(connection);
+    var clientes = repository.BuscarTodos();
 
     foreach (var cliente in clientes)
     {
