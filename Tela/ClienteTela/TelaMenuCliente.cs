@@ -14,8 +14,9 @@ public static class TelaMenuCliente
         Console.WriteLine("3 - Atualizar cliente");
         Console.WriteLine("4 - Deletar cliente");
         Console.WriteLine();
+        Console.WriteLine("0 - Voltar");
         Console.WriteLine();
-        var opcao = short.Parse(Console.ReadLine());
+        var opcao = short.Parse(Console.ReadLine()!);
 
         switch (opcao)
         {
@@ -31,8 +32,10 @@ public static class TelaMenuCliente
             case 4:
                 TelaDeletarCliente.CarregarTelaDeletar();
                 break;
-            default:
-                CarregarTelaMenuCliente(); break;
+            case 0:
+                TelaInicial.CarregarTela(); 
+                break;
+            default: CarregarTelaMenuCliente(); break;
         }
     }
 }

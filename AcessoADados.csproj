@@ -14,7 +14,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Tela\ProcedimentoTela\" />
       <Folder Include="Tela\RegistroTela\" />
     </ItemGroup>
 
