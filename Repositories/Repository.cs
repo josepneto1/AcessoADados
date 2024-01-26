@@ -1,5 +1,4 @@
 using System.Data.SqlClient;
-using AcessoADados.Models;
 using Dapper.Contrib.Extensions;
 
 namespace AcessoADados.Repositories;
@@ -16,36 +15,23 @@ public class Repository<T> where T : class
     public IEnumerable<T> BuscarTodos()
         => _connection.GetAll<T>();
     
-    public Procedimento BuscarUmo(int id)
-        => _connection.Get<Procedimento>(id);
+    public T BuscarUm(int id)
+        => _connection.Get<T>(id);
 
-    public void CadastrarProcedimento(Procedimento procedimento)
-        => _connection.Insert<Procedimento>(procedimento);
+    public void Cadastrar(T model)
+        => _connection.Insert<T>(model );
     
-    public void AtualizarProcedimento(Procedimento procedimento)
-    {
-        if (procedimento.Id != 0)
-        {
-            _connection.Update<Procedimento>(procedimento);
-        }
-    }
+    public void Atualizar(T model)
+        => _connection.Update<T>(model);
     
-    public void DeletarProcedimento(Procedimento procedimento)
-    {
-        if (procedimento.Id != 0)
-        {
-            _connection.Delete<Procedimento>(procedimento);
-        }
-    }
-    
-    public void DeletarProcedimento(int id)
-    {
-        if (id != 0)
-        {
-            return;
-        }
+    public void Deletar(T model)
+        => _connection.Delete<T>(model);
 
-        var procedimento = _connection.Get<Procedimento>(id);
-        _connection.Delete<Procedimento>(procedimento);
+    public void Deletar(int id)
+    {
+        var model = _connection.Get<T>(id);
+        _connection.Delete<T>(model);
+        
     }
+
 }
