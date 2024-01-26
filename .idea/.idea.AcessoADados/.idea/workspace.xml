@@ -8,16 +8,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d155fb23-57f6-442f-ab7e-2cb913903a5b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Tela/ProcedimentoTela/TelaMenuProcedimento.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tela/TelaInicial.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tela/ProcedimentoTela/TelaAtualizarProcedimento.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tela/ProcedimentoTela/TelaCadastrarProcedimento.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tela/ProcedimentoTela/TelaListarProcedimentos.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AcessoADados/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AcessoADados/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcessoADados.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AcessoADados.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tela/ClienteTela/TelaAtualizarCliente.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tela/ClienteTela/TelaAtualizarCliente.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tela/ClienteTela/TelaCadastrarCliente.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tela/ClienteTela/TelaCadastrarCliente.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tela/ClienteTela/TelaDeletarCliente.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tela/ClienteTela/TelaDeletarCliente.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tela/ClienteTela/TelaListarClientes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tela/ClienteTela/TelaListarClientes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tela/ClienteTela/TelaMenuCliente.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tela/ClienteTela/TelaMenuCliente.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tela/ProcedimentoTela/TelaMenuProcedimento.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tela/ProcedimentoTela/TelaMenuProcedimento.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tela/TelaInicial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tela/TelaInicial.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +89,7 @@
       <workItem from="1706089375356" duration="1609000" />
       <workItem from="1706118265879" duration="610000" />
       <workItem from="1706174473531" duration="7282000" />
-      <workItem from="1706200708700" duration="26738000" />
+      <workItem from="1706200708700" duration="30531000" />
     </task>
     <servers />
   </component>
