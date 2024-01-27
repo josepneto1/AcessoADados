@@ -1,0 +1,38 @@
+CREATE DATABASE [Clinica]
+GO
+
+USE [Clinica]
+GO
+
+CREATE TABLE[Cliente](
+    [Id] INT NOT NULL IDENTITY(1, 1),
+    [Nome] NVARCHAR(80) NOT NULL,
+    [Telefone] VARCHAR(11) NOT NULL,
+    [Detalhe] NVARCHAR(300  ),
+
+    CONSTRAINT [PK_Cliente] PRIMARY KEY([Id]),
+    CONSTRAINT [UQ_Cliente_Telefone] UNIQUE([Telefone])
+)
+CREATE NONCLUSTERED INDEX [IX_Cliente_Nome] ON [Cliente]([Nome])
+
+CREATE TABLE[Procedimento](
+    [Id] INT NOT NULL IDENTITY(1, 1),
+    [Nome] NVARCHAR(80) NOT NULL,
+    [Valor] FLOAT,
+
+    CONSTRAINT [PK_Procedimento] PRIMARY KEY([Id]),
+)
+CREATE NONCLUSTERED INDEX [IX_Procedimento_Nome] ON [Procedimento]([Nome])
+
+CREATE TABLE [RegistroProcedimento] (
+    [Id] INT NOT NULL IDENTITY(1, 1),
+    [ClienteId] INT NOT NULL,
+    [ProcedimentoId] INT NOT NULL,
+    [DataRealizacao] SMALLDATETIME NOT NULL,
+    [Valor] FLOAT,
+    
+    CONSTRAINT [PK_RegistroProcedimento] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_RegistroProcedimento_Cliente] FOREIGN KEY ([ClienteId]) REFERENCES [Cliente]([Id]),
+    CONSTRAINT [FK_RegistroProcedimento_Procedimento] FOREIGN KEY ([ProcedimentoId]) REFERENCES [Procedimento]([Id])
+);
+
