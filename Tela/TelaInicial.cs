@@ -1,5 +1,6 @@
 using AcessoADados.Tela.ClienteTela;
 using AcessoADados.Tela.ProcedimentoTela;
+using AcessoADados.Tela.RegistroTela;
 
 namespace AcessoADados.Tela;
 
@@ -25,6 +26,9 @@ public static class TelaInicial
                 break;
             case 2:
                 TelaMenuProcedimento.CarregarTelaMenuProcedimento();
+                break;
+            case 3:
+                TelaMenuRegistro.CarregarTelaMenuRegistro();
                 break;
             default:
                 CarregarTela(); break;
